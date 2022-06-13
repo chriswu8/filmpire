@@ -14,10 +14,16 @@ const App = () => (
     <main>
       <Switch>
         <Route exact path="/">
-          <h1>home</h1>
+          <h1>Movie</h1>
         </Route>
-        <Route exact path="/movies">
-          <h1>movies</h1>
+        <Route exact path="/movie/:id">
+          <h1>Movie Information</h1>
+        </Route>
+        <Route exact path="/actors/:id">
+          <h1>Actors</h1>
+        </Route>
+        <Route exact path="/profile/:id">
+          <h1>Profile</h1>
         </Route>
       </Switch>
     </main>
