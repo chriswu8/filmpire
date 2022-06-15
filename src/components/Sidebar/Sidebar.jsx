@@ -19,6 +19,12 @@ const Sidebar = (setMobileOpen) => {
           alt="logo"
         />
       </Link>
+      <Divider />
+      <List>
+        <ListSubheader>
+          Categories
+        </ListSubheader>
+      </List>
     </>
   );
 };
