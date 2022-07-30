@@ -17,11 +17,12 @@ const demoCategories = [
   { label: 'Animation', value: 'animation' },
 ];
 
+const pinkLogo = 'https://fontmeme.com/permalink/220730/c524195be0a08ee3204d69a0ffedd233.png';
+const blueLogo = 'https://fontmeme.com/permalink/220730/a6dbd0a1cea0d97b1d2fe4667dace081.png';
+
 const Sidebar = (setMobileOpen) => {
   const theme = useTheme();
   const classes = useStyles();
-  const pinkLogo = 'https://fontmeme.com/permalink/220615/2c32f41c995dddf8a29561d4323d4127.png';
-  const blueLogo = 'https://fontmeme.com/permalink/220615/b067cde88a418b578922d21e95d3a7c9.png';
 
   return (
     <>
@@ -32,17 +33,37 @@ const Sidebar = (setMobileOpen) => {
           alt="logo"
         />
       </Link>
+
       <Divider />
+
       <List>
         <ListSubheader>
           Categories
         </ListSubheader>
+        {categories.map(({ label, value }) => (
+          <Link key={value} className={classes.links} to="/">
+            <ListItem onClick={() => { }} button>
+              {/* <ListItemIcon>
+                <img src={pinkLogo} className={classes.genreImages} height={30} />
+              </ListItemIcon> */}
+              <ListItemText primary={label} />
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+
+      <Divider />
+
+      <List>
+        <ListSubheader>
+          Genres
+        </ListSubheader>
         {demoCategories.map(({ label, value }) => (
           <Link key={value} className={classes.links} to="/">
             <ListItem onClick={() => { }} button>
-              <ListItemIcon>
+              {/* <ListItemIcon>
                 <img src={pinkLogo} className={classes.genreImages} height={30} />
-              </ListItemIcon>
+              </ListItemIcon> */}
               <ListItemText primary={label} />
             </ListItem>
           </Link>

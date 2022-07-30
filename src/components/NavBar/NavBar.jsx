@@ -17,13 +17,12 @@ const NavBar = () => {
     <>
       <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
-          <h1>Nav@@</h1>
           {isMobile && (
             <IconButton
               color="inherit"
               edge="start"
               style={{ outline: 'none' }}
-              onClick={() => { }}
+              onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
               className={classes.menuButton}
             >
               <Menu />
@@ -41,9 +40,9 @@ const NavBar = () => {
           {!isMobile && 'Search...'}
           <div>
             {!isAuthenticated ? (
-              <button type="button" color="inherit" onClick={() => { }}>
+              <Button color="inherit" onClick={() => { }}>
                 Login &nbsp; <AccountCircle />
-              </button>
+              </Button>
             ) : (
               <Button
                 color="inherit"
@@ -73,6 +72,7 @@ const NavBar = () => {
               variant="temporary"
               anchor="right"
               open={mobileOpen}
+              onClose={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
               classes={{ paper: classes.drawerPaper }}
               ModalProps={{ keepMounted: true }}
             >
